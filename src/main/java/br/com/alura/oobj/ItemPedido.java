@@ -63,7 +63,7 @@ public class ItemPedido {
 
   @Override
   public String toString() {
-    return "ItemPedido{" +
+    return "br.com.alura.oobj.ItemPedido{" +
         "codigo=" + codigo +
         ", descricao='" + descricao + '\'' +
         ", quantidade=" + quantidade +

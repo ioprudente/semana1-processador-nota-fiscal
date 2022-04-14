@@ -16,7 +16,7 @@ public class Pedido {
 
   @Override
   public String toString() {
-    return "Pedido{" +
+    return "br.com.alura.oobj.Pedido{" +
         "itens=" + itens +
         '}';
   }

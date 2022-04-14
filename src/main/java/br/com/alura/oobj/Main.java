@@ -58,19 +58,19 @@ public class Main {
     for (ItemPedido itemPedido : itensPedido) {
       BigDecimal novoSubTotal = itemPedido.getValorUnitario().multiply(BigDecimal.valueOf(itemPedido.getQuantidade()));
       String classeFiscal = itemPedido.getClasseFiscal();
-      BigDecimal subTotal = subTotalPorClasseFiscal.get(classeFiscal);
+      BigDecimal subTotal = subTotalPorClasseFiscal.obterSubtotal(classeFiscal);
       if (subTotal != null) {
-        subTotalPorClasseFiscal.put(classeFiscal, subTotal.add(novoSubTotal));
+        subTotalPorClasseFiscal.adicionarSubtotal(classeFiscal, subTotal.add(novoSubTotal));
       } else {
-        subTotalPorClasseFiscal.put(classeFiscal, novoSubTotal);
+        subTotalPorClasseFiscal.adicionarSubtotal(classeFiscal, novoSubTotal);
       }
     }
 
     System.out.println("## Total do pedido: " + totalPedido);
     System.out.println("\n## Subtotal por classe fiscal");
-    for (String classeFiscal : subTotalPorClasseFiscal.keySet()) {
+    for (String classeFiscal : subTotalPorClasseFiscal.obterClassesFiscais()) {
       System.out.println("\n\tClasse fiscal: " + classeFiscal);
-      BigDecimal subtotal = subTotalPorClasseFiscal.get(classeFiscal);
+      BigDecimal subtotal = subTotalPorClasseFiscal.obterSubtotal(classeFiscal);
       System.out.println("\tSubtotal: " + subtotal);
     }
 
