@@ -22,7 +22,7 @@
                     <source>11</source>
                     <target>11</target>
                 </configuration>
-            </plugin
+            </plugin>
         </plugins>
     </build>
     <dependencies>
